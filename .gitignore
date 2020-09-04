@@ -1,0 +1,6 @@
+env_constitution/*
+env_constitution/
+env_constitution
+
+.env
+__pycache__
