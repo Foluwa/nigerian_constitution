@@ -1,21 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: border-box;
-}
+} */
 
 body {
   background: #C5DDEB;
   font: 14px/20px "Lato", Arial, sans-serif;
-  padding: 40px 0;
+  padding: 5em 0;
   color: white;
 }
 
-.container {
+/* .container {
   margin: 0 auto;
   width: 750px;
   background: #444753;
   border-radius: 5px;
-}
+} */
 
 .people-list {
   width: 260px;
