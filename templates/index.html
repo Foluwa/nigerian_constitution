@@ -6,7 +6,6 @@
     <title>Conversational AI for Nigerian Constitution</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-
 </head>
 
 <body>
@@ -16,9 +15,7 @@
     <!-- partial -->
 
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
-        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -31,12 +28,7 @@
 
             // Connect
             socket.on('connect', function () {
-                socket.emit('my_event', { data: 'I\'m connected!' });
-            });
-
-            // response data
-            socket.on('my_response', function (msg, cb) {
-                console.log('RESPONSE DATA IS >>> ', msg)
+                // socket.emit('my_event', { data: 'I\'m connected!' });
             });
 
             Message = function (arg) {
@@ -64,14 +56,14 @@
                     return $message_input.val();
                 };
 
-                sendMessage = function (text) {
+                sendMessage = function (text, message_side) {
                     var $messages, message;
                     if (text.trim() === '') {
                         return;
                     }
                     $('.message_input').val('');
                     $messages = $('.messages');
-                    message_side = message_side === 'left' ? 'right' : 'left';
+                    // message_side = message_side === 'left' ? 'right' : 'left';
                     message = new Message({
                         text: text,
                         message_side: message_side
@@ -84,22 +76,21 @@
                 };
 
                 $('.send_message').click(function (e) {
-                    return sendMessage(getMessageText());
+                    return sendMessage(getMessageText(), 'right');
                 });
 
                 $('.message_input').keyup(function (e) {
                     if (e.which === 13) {
-                        return sendMessage(getMessageText());
+                        return sendMessage(getMessageText(), 'right');
                     }
                 });
-                sendMessage('initial ');
-                sendMessage('initial 222');
-                // setTimeout(function () {
-                //     return sendMessage('user 1');
-                // }, 1000);
-                // return setTimeout(function () {
-                //     return sendMessage('initial 2');
-                // }, 2000);
+                // sendMessage('initial ', 'left');
+
+                // response data
+                socket.on('my_response', function (msg) {
+                    console.log('RESPONSE DATA IS >>> ', msg.data.data)
+                    sendMessage(msg.data.data, 'left');
+                });
             });
 
         }.call(this));
