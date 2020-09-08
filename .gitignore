@@ -4,8 +4,4 @@ env_constitution
 
 .env
 __pycache__
-<<<<<<< HEAD
-__pycache__/
-=======
 .vscode/
->>>>>>> 59eed19d309f3653aab29cc7c4ab064a719c1571
