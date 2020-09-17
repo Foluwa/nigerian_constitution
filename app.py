@@ -1,16 +1,16 @@
+from gevent import monkey
+monkey.patch_all()
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, disconnect
-from threading import Lock
-async_mode = None
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, engineio_logger=True, async_mode=async_mode)
-thread = None
-thread_lock = Lock()
+app.config['DEBUG'] = True
+# socketio = SocketIO(app, cors_allowed_origins="*", message_queue='redis://', async_mode='eventlet')
+socketio = SocketIO(app, async_mode="threading") # async_mode=None, logger=True, engineio_logger=True)
 
 @app.route('/')
-def hello():
+def index():
     return ('Conversation AI')
 
 @app.route('/chat')
@@ -18,21 +18,18 @@ def chat():
     return render_template('chat.html')
 
 def on_connect(self):
-    global thread
-    with thread_lock:
-        if thread is None:
-            thread = socketio.start_background_task(background_thread)
     emit('my_response', {'data': 'Client Connected'})
 
 @socketio.on('my_event', namespace='/chat')
-def test_message(message):
+def user_message(message):
     print('message is >> ', message)
-    emit('my_response',
-         {'data': message})
+    emit('my_response', {'data': message})
+    # socketio.sleep(2)
+    socketio.disconnect()
 
 def on_disconnect(self):
     print('Client disconnected')
         
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, threaded=True)
+    socketio.run(app)
