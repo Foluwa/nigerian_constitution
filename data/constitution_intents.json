@@ -1,0 +1,72 @@
+{
+    "intents": [
+        {
+            "tag": "About constitution",
+            "patterns": [
+                "What is Nigerian Constitution? ",
+                "Constitution"
+            ],
+            "responses": [
+                "TO LIVE in unity and harmony as one indivisible and indissoluble sovereign nation under God, dedicated to the promotion of inter-African solidarity, world peace, international co-operation and understanding",
+                "AND TO PROVIDE for a Constitution for the purpose of promoting the good government and welfare of all persons in our country, on the principles of freedom, equality and justice, and for the purpose of consolidating the unity of our people"
+            ]
+        },
+        {
+            "tag": "Chapter I. General Provisions",
+            "patterns": [
+                "what is the general provision of the Nigerian constitution",
+                "general provision"
+            ],
+            "responses": [
+                "This Constitution is Supreme and its provisions shall have binding force on the authorities and persons throughout the Federal Republic of Nigeria.",
+                "The Federal Republic of Nigeria shall not be governed, nor shall any persons or group of persons take control of the Government of Nigeria or any part thereof, except in accordance with the provisions of this Constitution.",
+                "If any other law is inconsistent with the provisions of this Constitution, this Constitution shall prevail, and that other law shall, to the extent of the inconsistency, be void.",
+                "Nigeria is one indivisible and indissoluble sovereign state to be known by the name of the Federal Republic of Nigeria",
+                "Nigeria shall be a Federation consisting of States and a Federal Capital Territory.",
+                "Nigeria is one indivisible and indissoluble Sovereign State to be known by the name of the Federal Republic of Nigeria.",
+                "Nigeria shall be a Federation consisting of States and a Federal Capital Territory."
+            ]
+        },
+        {
+            "tag": "Nigerian States",
+            "patterns": [
+                "What states are in Nigeria?",
+                "Names of states in Nigeria"
+            ],
+            "responses": [
+                "There shall be 36 states in Nigeria, that is to say, Abia, Adamawa, Akwa Ibom, Anambra, Bauchi, Bayelsa, Benue, Borno, Cross River, Delta, Ebonyi, Edo, Ekiti, Enugu, Gombe, Imo, Jigawa, Kaduna, Kano, Katsina, Kebbi, Kogi, Kwara, Lagos, Nasarawa, Niger, Ogun, Ondo, Osun, Oyo, Plateau, Rivers, Sokoto, Taraba, Yobe and Zamfara."
+            ]
+        },
+        {
+            "tag": "Decree No 1",
+            "patterns": [
+                "DECREE 1989",
+                "Decrees in the contitution",
+                "First Decrees",
+                "Decree No"
+            ],
+            "responses": [
+                "WHEREAS the Federal Military Government of the Federal Republic of Nigeria in compliance with the transition to Civil Rule (Political Programme) Decree 1987, set up the Constitution Review Committee to review the Constitution of the Federal Republic of Nigeria 1979 in line with the accepted recommendations of the Political Bureau inaugurated by the Federal Military Government on 13th January 1986; AND WHEREAS the Constituent Assembly,established by the Constituent Assembly Decree 1988 consisting of a Chairman, a Deputy Chairman,450 elected members and 111 nominated members was to deliberate upon the Draft Constitution prepared by the Constitution Review Committee",
+                "AND WHEREAS the Constituent Assembly established by the Constituent Assembly Decree 1988, and as empowered by that Decree, has deliberated upon the draft Constitution (except certain provisions thereon)drawn up by the Constitution Review Committee and presented the result of its deliberations to the Armed Forces Ruling Council",
+                "AND WHEREAS the Armed Forces Ruling Council has approved the same,subject to such modifications as it deemed necessary and may be deemed necessary in future, in the public interest and for purposes of promoting the welfare and fostering the unity and progress of the people of Nigeria;",
+                "AND WHEREAS in order that the Federal Military Government may achieve its objective of leaving an enduring Constitution to the Nation, and allow for a learning process, it is necessary during the transition period to enact certain Decrees by progression in order to bring into force the relevant provisions of the Constitution relative to each of the three tiers of Government;",
+                "AND WHEREAS it is imperative that the present Military Administration should continue to rule by the enactment of Decrees for the welfare, unity and progress of all the citizens of Nigeria, notwithstanding anything to the contrary in the provisions of the Schedule to this Decree;",
+                "AND WHEREAS, except as may be provided to the contrary, nothing in the Schedule to this Decree shall impede or derogate from the powers and functions exercisable by the Federal Military Government under the Constitution (Suspension and Modification) Decree 1984 (as amended) and the Federal Military Government (Supremacy and enforcement of Powers) Decree 1984 during the transition period;",
+                "WHEREAS,it is necessary in accordance with the provisions of the Transition to Civil Rule )Political Programme) Decree 1987 for the Constitution of the Federal Republic of Nigeria 1989 after necessary modifications and approval by the Armed Forces Ruling Council to be promulgated in order to give the same forces of law by 1st October, 1992 in the interest and for the promotion of the welfare and unity of the people of Nigeria."
+            ]
+        },
+        {
+            "tag": "Federal Military Government Decrees",
+            "patterns": [
+                "Federal Military Government Decrees",
+                "continuance of the governance of Nigeria",
+                "Federal Military Government shall enact, during the transition period, the following Decrees"
+            ],
+            "responses": [
+                "The Local Government (basic Constitutional and Transitional Provisions) Decree to guarantee the operation, composition, and finance of as well as the functions to be transitionally performed by the democratically elected Local Governments as the third tier of Government",
+                "The States Government (Basic Constitutional and Transitional Provisions) Decree to confer powers, functions and duties to be performed during the transition period by the democratically elected civilian Governor of each State, the House of Assembly and their relationship with the Federal Military Government",
+                "Federal Government (Basic Constitutional and Transitional Provisions) Decree to cater for other matters affecting the Government of the Federation during the transition period and its relationship with the States and Local Government Areas; and such other Decrees as may be necessary for the learning process"
+            ]
+        }
+    ]
+}

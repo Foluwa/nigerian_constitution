@@ -15,9 +15,7 @@
     <!-- partial -->
 
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -26,11 +24,11 @@
             var Message;
 
             namespace = '/chat';
-            var socket = io.connect(namespace);
+            var socket = io(namespace);
 
             // Connect
             socket.on('connect', function () {
-                // socket.emit('my_event', { data: 'Client connected!' });
+                // socket.emit('my_event', { data: 'I\'m connected!' });
             });
 
             Message = function (arg) {
@@ -92,10 +90,6 @@
                 socket.on('my_response', function (msg) {
                     console.log('RESPONSE DATA IS >>> ', msg.data.data)
                     sendMessage(msg.data.data, 'left');
-                });
-
-                socket.off('my_response', function () {
-                    console.log(' OFF AM ')
                 });
             });
 
