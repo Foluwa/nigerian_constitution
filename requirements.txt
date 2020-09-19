@@ -22,7 +22,6 @@ MarkupSafe==1.1.1
 msgpack==1.0.0
 packaging==20.4
 pep517==0.8.2
-pkg-resources==0.0.0
 progress==1.5
 pyparsing==2.4.7
 python-engineio==3.13.2
