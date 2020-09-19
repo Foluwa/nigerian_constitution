@@ -31,6 +31,9 @@
                 // socket.emit('my_event', { data: 'I\'m connected!' });
             });
 
+
+
+
             Message = function (arg) {
                 this.text = arg.text, this.message_side = arg.message_side;
                 this.draw = function (_this) {
@@ -58,6 +61,9 @@
 
                 sendMessage = function (text, message_side) {
                     var $messages, message;
+
+                    console.log({ text, message_side })
+
                     if (text.trim() === '') {
                         return;
                     }
@@ -75,6 +81,13 @@
                     return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
                 };
 
+                // response data
+                socket.on('my_response', function (msg) {
+                    console.log('RESPONSE DATA IS >>> ', msg.data.data)
+                    // socket.disconnect()
+                    sendMessage(msg.data.data, 'left');
+                });
+
                 $('.send_message').click(function (e) {
                     return sendMessage(getMessageText(), 'right');
                 });
@@ -85,12 +98,6 @@
                     }
                 });
                 // sendMessage('initial ', 'left');
-
-                // response data
-                socket.on('my_response', function (msg) {
-                    console.log('RESPONSE DATA IS >>> ', msg.data.data)
-                    sendMessage(msg.data.data, 'left');
-                });
             });
 
         }.call(this));
