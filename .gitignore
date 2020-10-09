@@ -1,7 +1,9 @@
-env_constitution/*
-env_constitution/
-env_constitution
 
 .env
 __pycache__
 .vscode/
+Nigeria.pth
+
+env_constitution/*
+env_constitution/
+env_constitution

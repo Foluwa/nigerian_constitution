@@ -83,7 +83,9 @@
 
                 // response data
                 socket.on('my_response', function (msg) {
-                    console.log('RESPONSE DATA IS >>> ', msg.data.data)
+                    console.log('RESPONSE DATA1 IS >>> ', msg)
+                    console.log('RESPONSE DATA2 IS >>> ', msg.data, msg['data']['data'])
+                    console.log('RESPONSE DATA3 IS >>> ', msg.data['data'])
                     // socket.disconnect()
                     sendMessage(msg.data.data, 'left');
                 });
